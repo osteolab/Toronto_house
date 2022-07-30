@@ -563,13 +563,6 @@ input {
                     <h2 class="title">Details about house in Toronto</h2>
                     <h3 class="title">Final project demo - Tracy</h3>
                     <form action="{{ url_for('predict')}}" method="POST">
-                        <!--<div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Enter a location name" name="location">
-                        </div>
-
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Enter a total sqft." name="sqft">
-                        </div>-->
 
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
@@ -626,18 +619,13 @@ input {
                         </div>
 
                         <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="balcony">
-                                    <option disabled="disabled" selected="selected">Balcony</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
+                            <input class="input--style-1" type="text" placeholder="Enter a Longitude:" name="Longitude">
                         </div>
+
+                        <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="Enter a Latitude" name="Latitude">
+                        </div>
+
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit">Submit</button>
                         </div>
