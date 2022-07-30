@@ -10,7 +10,8 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>House Price Prediction</title>
+    <title>Toronto House Price Prediction</title>
+    <title>Check your dream house!</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -559,24 +560,38 @@ input {
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Details about house</h2>
+                    <h2 class="title">Details about house in Toronto</h2>
+                    <h3 class="title">Final project demo - Tracy</h3>
                     <form action="{{ url_for('predict')}}" method="POST">
-                        <div class="input-group">
+                        <!--<div class="input-group">
                             <input class="input--style-1" type="text" placeholder="Enter a location name" name="location">
                         </div>
 
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="Enter a total sqft." name="sqft">
+                        </div>-->
+
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="area">
+                                    <option disabled="disabled" selected="selected">Home type</option>
+                                    <option value="CONDO">CONDO</option>
+                                    <option value="SINGLE_FAMILY">SINGLE_FAMILY</option>
+                                    <option value="TOWNHOUSE">TOWNHOUSE</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
                         </div>
 
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="area">
-                                    <option disabled="disabled" selected="selected">Area type</option>
-                                    <option value="Built-up Area">Built-up Area</option>
-                                    <option value="Carpet Area">Carpet Area</option>
-                                    <option value="Plot Area">Plot Area</option>
-                                    <option value="Super built-up Area">Super built-up Area</option>
+                                    <option disabled="disabled" selected="selected">City</option>
+                                    <option value="Brampton">Brampton</option>
+                                    <option value="Markham">Markham</option>
+                                    <option value="Mississauga">Mississauga</option>
+                                    <option value="Toronto">Toronto</option>
+                                    <option value="Vaughan">Vaughan</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
@@ -585,7 +600,7 @@ input {
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="size">
-                                    <option disabled="disabled" selected="selected">Size</option>
+                                    <option disabled="disabled" selected="selected">Bedrooms</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -599,7 +614,7 @@ input {
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="bath">
-                                    <option disabled="disabled" selected="selected">Bath</option>
+                                    <option disabled="disabled" selected="selected">Bathrooms</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -634,9 +649,9 @@ input {
     </div>
 
 
-    <div>
+    <!--<div>
       <a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=us-south&integrationID=b12fc8a3-ef56-4f2e-a659-91d74b485824&serviceInstanceID=6ae70922-58d8-4c67-8e15-974b1458b2f1"><h3 align="right">Chat Bot</h3></a>
-    </div>
+    </div>-->
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
