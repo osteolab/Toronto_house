@@ -10,11 +10,9 @@ pkl_file = open('model.pkl','rb')
 model = pickle.load(open('model.pkl', 'rb'))
 index_dict = pickle.load(pkl_file)
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -22,32 +20,35 @@ def predict():
     if request.method=='POST':
         result = request.form
 
-        index_dict = pickle.load(open('cat','rb'))
-        location_cat = pickle.load(open('location_cat','rb'))
+        new_vector = [0,0,0, 0,0,0 ,0,0,0, 0,0,0]
+        new_vector[0] = int(result['bed'])
+        new_vector[1] = int(result['bath'])
+        new_vector[2] = float(result['Latitude'])
+        new_vector[3] = float(result['Longitude'])
 
-        new_vector = np.zeros(151)
-
-        result_location = result['location']
-
-        if result_location not in location_cat:
-            new_vector[146] = 1
-        else:
-            new_vector[index_dict[str(result['location'])]] = 1
-
-
-        new_vector[index_dict[str(result['area'])]] = 1
-
-        new_vector[0] = result['sqft']
-        new_vector[1] = result['bath']
-        new_vector[2] = result['balcony']
-        new_vector[3] = result['size']
+        if result['city'] == 'Brampton':
+          new_vector[4] = 1
+        if result['city'] == 'Markham':
+          new_vector[5] = 1
+        if result['city'] == 'Mississauga':
+          new_vector[6] = 1
+        if result['city'] == 'Toronto':
+          new_vector[7] = 1
+        if result['city'] == 'Vaughan':
+          new_vector[8] = 1
+        if result['type'] == 'CONDO':
+          new_vector[9] = 1
+        if result['type'] == 'SINGLE_FAMILY':
+          new_vector[10] = 1
+        if result['type'] == 'TOWNHOUSE':
+          new_vector[11] = 1
 
     new = [new_vector]
-
+    print(new)
     prediction = model.predict(new)
-    #print(prediction)
+    print(prediction)
+    return render_template('index.html', Predict_score ='Your house estimate price is  CA$ {}'.format(int(prediction)))
 
-    return render_template('index.html', Predict_score ='Your house estimate price is  ₹ {} lakhs'.format(prediction))
 
 if __name__ == "__main__":
     app.run(debug=True)
