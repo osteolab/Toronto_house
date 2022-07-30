@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index_effects.css') }}">
+
+  
+</head>
+
+<body>
+
+<div class="login">
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" class="container">
+	
+	  <h1>Housing Price Prediction</h1>
+	  
+	  <label id="K"><b>MSSubClass</b></label>
+	  <input type="text" name="MSSubClass" placeholder="MSSubClass" value="60" required="required"/>
+	  
+	  <label id="K"><b>Lotfrontage</b></label>
+      <input type="text" name="Lotfrontage" placeholder="Lotfrontage" value="65" required="required"/>
+	  
+	  <label id="K"><b>LotArea</b></label>
+      <input type="text" name="LotArea" placeholder="LotArea" value="8450" required="required"/>
+	  
+	  <label id="K"><b>OverallQual</b></label>
+      <input type="text" name="OverallQual" placeholder="OverallQual" value="7" required="required"/>
+	  
+	  <label id="K"><b>OverallCond</b></label>
+      <input type="text" name="OverallCond" placeholder="OverallCond"  value="5" required="required"/>
+	  
+	  <label id="K"><b>YearBuilt</b></label>
+      <input type="text" name="YearBuilt" placeholder="YearBuilt"  value="2003" required="required"/>
+	  
+	  <label id="K"><b>YearRemodAdd</b></label>
+      <input type="text" name="YearRemodAdd" placeholder="YearRemodAdd"  value="2003" required="required"/>
+	  
+	  <label id="K"><b>MasVnrArea</b></label>
+      <input type="text" name="MasVnrArea" placeholder="MasVnrArea"  value="196" required="required"/>
+	  
+	  <label id="K"><b>BsmtFinSF1</b></label>
+      <input type="text" name="BsmtFinSF1" placeholder="BsmtFinSF1"  value="706" required="required"/>
+	  
+	  <label id="K"><b>BsmtFinSF2</b></label>
+      <input type="text" name="BsmtFinSF2" placeholder="BsmtFinSF2"  value="0" required="required"/>
+	  
+	  <label id="K"><b>BsmtUnfSF</b></label>
+      <input type="text" name="BsmtUnfSF" placeholder="BsmtUnfSF"  value="150" required="required"/>
+	  
+	  <label id="K"><b>TotalBsmtSF</b></label>
+      <input type="text" name="TotalBsmtSF" placeholder="TotalBsmtSF"  value="856" required="required"/>
+	  
+	  <label id="K"><b>1stFlrSF</b></label>
+      <input type="text" name="1stFlrSF" placeholder="1stFlrSF"  value="856" required="required"/>
+	  
+	  <label id="K"><b>2ndFlrSF</b></label>
+      <input type="text" name="2ndFlrSF" placeholder="2ndFlrSF"  value="854" required="required"/>
+	  
+	  <label id="K"><b>GrLivArea</b></label>
+      <input type="text" name="GrLivArea" placeholder="GrLivArea"  value="1710" required="required"/>
+	  
+	  <label id="K"><b>BsmtFullBath</b></label>
+      <input type="text" name="BsmtFullBath" placeholder="BsmtFullBath"  value="1" required="required"/>
+	  
+	  <label id="K"><b>BsmtHalfBath</b></label>
+      <input type="text" name="BsmtHalfBath" placeholder="BsmtHalfBath"  value="0" required="required"/>
+	  
+	  <label id="K"><b>FullBath</b></label>
+      <input type="text" name="FullBath" placeholder="FullBath"  value="2" required="required"/>
+	  
+	  <label id="K"><b>HalfBath</b></label>
+      <input type="text" name="HalfBath" placeholder="HalfBath"  value="1" required="required"/>
+	  
+	  <label id="K"><b>BedroomAbvGr</b></label>
+      <input type="text" name="BedroomAbvGr" placeholder="BedroomAbvGr"  value="3" required="required"/>
+	  
+	  <label id="K"><b>KitchenAbvGr</b></label>
+      <input type="text" name="KitchenAbvGr" placeholder="KitchenAbvGr"  value="1" required="required"/>
+	  
+	  <label id="K"><b>TotRmsAbvGrd</b></label>
+      <input type="text" name="TotRmsAbvGrd" placeholder="TotRmsAbvGrd"  value="8" required="required"/>
+	  
+	  <label id="K"><b>Fireplaces</b></label>
+      <input type="text" name="Fireplaces" placeholder="Fireplaces"  value="0" required="required"/>
+	  
+	  <label id="K"><b>GarageYrBlt</b></label>
+      <input type="text" name="GarageYrBlt" placeholder="GarageYrBlt"  value="2003" required="required"/>
+	  
+	  <label id="K"><b>GarageCars</b></label>
+      <input type="text" name="GarageCars" placeholder="GarageCars"  value="2" required="required"/>
+	  
+	  <label id="K"><b>GarageArea</b></label>
+      <input type="text" name="GarageArea" placeholder="GarageArea"  value="548" required="required"/>
+	  
+	  <label id="K"><b>WoodDeckSF</b></label>
+      <input type="text" name="WoodDeckSF" placeholder="WoodDeckSF"  value="0" required="required"/>
+	  
+	  <label id="K"><b>OpenPorchSF</b></label>
+      <input type="text" name="OpenPorchSF" placeholder="OpenPorchSF"  value="61" required="required"/>
+	  
+	  <label id="K"><b>EnclosedPorch</b></label>
+      <input type="text" name="EnclosedPorch" placeholder="EnclosedPorch"  value="0" required="required"/>
+	  
+	  <label id="K"><b>3SsnPorch</b></label>
+      <input type="text" name="3SsnPorch" placeholder="3SsnPorch"  value="0" required="required"/>
+	  
+	  <label id="K"><b>ScreenPorch</b></label>
+      <input type="text" name="ScreenPorch" placeholder="ScreenPorch"  value="0" required="required"/>
+	  
+	  <label id="K"><b>MiscVal</b></label>
+      <input type="text" name="MiscVal" placeholder="MiscVal"  value="0" required="required"/>
+	  
+	  <label id="K"><b>MoSold</b></label>
+      <input type="text" name="MoSold" placeholder="MoSold"  value="2" required="required"/>
+	  
+	  <label id="K"><b>YrSold</b></label>
+      <input type="text" name="YrSold" placeholder="YrSold"  value="2008" required="required"/>
+	  
+      <button type="submit" class="btn btn-primary btn-block btn-large" id="btn">Predict</button>
+	  
+    </form>
+
+   {{ prediction_text }}
+
+ </div>
+
+</body>
+
+</html>

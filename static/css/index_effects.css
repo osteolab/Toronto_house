@@ -1,0 +1,52 @@
+body, html {
+  height: 100%;
+  background-color: #34c0eb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login {
+  min-height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 450px;
+  padding: 16px;
+  background-color: darkblue;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+}
+
+#btn {
+  background-color: lightblue;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+#btn:hover {opacity: 1;}
+
+#K {
+display: block;
+text-align: left;
+}

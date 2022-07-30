@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index_effects.css') }}">-->
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Housing Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="MSSubClass" placeholder="MSSubClass"  value="60" required="required"/><br><br>
+      <input type="text" name="Lotfrontage" placeholder="Lotfrontage"  value="65" required="required"/><br><br>
+      <input type="text" name="LotArea" placeholder="LotArea"  value="8450" required="required"/><br><br>
+      <input type="text" name="OverallQual" placeholder="OverallQual"  value="7" required="required"/><br><br>
+      <input type="text" name="OverallCond" placeholder="OverallCond"  value="5" required="required"/><br><br>
+      <input type="text" name="YearBuilt" placeholder="YearBuilt"  value="2003" required="required"/><br><br>
+      <input type="text" name="YearRemodAdd" placeholder="YearRemodAdd"  value="2003" required="required"/><br><br>
+      <input type="text" name="MasVnrArea" placeholder="MasVnrArea"  value="196" required="required"/><br><br>
+      <input type="text" name="BsmtFinSF1" placeholder="BsmtFinSF1"  value="706" required="required"/><br><br>
+      <input type="text" name="BsmtFinSF2" placeholder="BsmtFinSF2"  value="0" required="required"/><br><br>
+      <input type="text" name="BsmtUnfSF" placeholder="BsmtUnfSF"  value="150" required="required"/><br><br>
+      <input type="text" name="TotalBsmtSF" placeholder="TotalBsmtSF"  value="856" required="required"/><br><br>
+      <input type="text" name="1stFlrSF" placeholder="1stFlrSF"  value="856" required="required"/><br><br>
+      <input type="text" name="2ndFlrSF" placeholder="2ndFlrSF"  value="854" required="required"/><br><br>
+      <input type="text" name="GrLivArea" placeholder="GrLivArea"  value="1710" required="required"/><br><br>
+      <input type="text" name="BsmtFullBath" placeholder="BsmtFullBath"  value="1" required="required"/><br><br>
+      <input type="text" name="BsmtHalfBath" placeholder="BsmtHalfBath"  value="0" required="required"/><br><br>
+      <input type="text" name="FullBath" placeholder="FullBath"  value="2" required="required"/><br><br>
+      <input type="text" name="HalfBath" placeholder="HalfBath"  value="1" required="required"/><br><br>
+      <input type="text" name="BedroomAbvGr" placeholder="BedroomAbvGr"  value="3" required="required"/><br><br>
+      <input type="text" name="KitchenAbvGr" placeholder="KitchenAbvGr"  value="1" required="required"/><br><br>
+      <input type="text" name="TotRmsAbvGrd" placeholder="TotRmsAbvGrd"  value="8" required="required"/><br><br>
+      <input type="text" name="Fireplaces" placeholder="Fireplaces"  value="0" required="required"/><br><br>
+      <input type="text" name="GarageYrBlt" placeholder="GarageYrBlt"  value="2003" required="required"/><br><br>
+      <input type="text" name="GarageCars" placeholder="GarageCars"  value="2" required="required"/><br><br>
+      <input type="text" name="GarageArea" placeholder="GarageArea"  value="548" required="required"/><br><br>
+      <input type="text" name="WoodDeckSF" placeholder="WoodDeckSF"  value="0" required="required"/><br><br>
+      <input type="text" name="OpenPorchSF" placeholder="OpenPorchSF"  value="61" required="required"/><br><br>
+      <input type="text" name="EnclosedPorch" placeholder="EnclosedPorch"  value="0" required="required"/><br><br>
+      <input type="text" name="3SsnPorch" placeholder="3SsnPorch"  value="0" required="required"/><br><br>
+      <input type="text" name="ScreenPorch" placeholder="ScreenPorch"  value="0" required="required"/><br><br>
+      <input type="text" name="MiscVal" placeholder="MiscVal"  value="0" required="required"/><br><br>
+      <input type="text" name="MoSold" placeholder="MoSold"  value="2" required="required"/><br><br>
+      <input type="text" name="YrSold" placeholder="YrSold"  value="2008" required="required"/><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><br><br>
+    </form>
+
+   <br><br>
+   <br><br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
