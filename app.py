@@ -43,7 +43,7 @@ def predict():
         if result['type'] == 'TOWNHOUSE':
           new_vector[11] = 1
 
-    new = [new_vector]
+    new = np.array([new_vector])
     #print(new)
     prediction = model.predict(new)
     #print(prediction)
