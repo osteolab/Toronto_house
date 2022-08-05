@@ -44,9 +44,9 @@ def predict():
           new_vector[11] = 1
 
     new = [new_vector]
-    print(new)
+    #print(new)
     prediction = model.predict(new)
-    print(prediction)
+    #print(prediction)
     return render_template('index.html', Predict_score ='Your house estimate price of ({}bed-{}bath-{}-{}) is  CA$ {}'.format(new_vector[0],new_vector[1],result['city'],result['type'],int(prediction)))
 
 
