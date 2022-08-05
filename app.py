@@ -23,8 +23,8 @@ def predict():
         new_vector = [0,0,0, 0,0,0 ,0,0,0, 0,0,0]
         new_vector[0] = int(result['bed'])
         new_vector[1] = int(result['bath'])
-        new_vector[2] = int(result['Latitude'])
-        new_vector[3] = int(result['Longitude'])
+        new_vector[2] = float(result['Latitude'])
+        new_vector[3] = float(result['Longitude'])
 
         if result['city'] == 'Brampton':
           new_vector[4] = 1
