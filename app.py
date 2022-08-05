@@ -47,8 +47,8 @@ def predict():
     #print(new)
     prediction = model.predict(new)
     #print(prediction)
-    return render_template('index.html', Predict_score ='Your house estimate price of ({}bed-{}bath-{}-{}) is  CA$ {}'.format(new_vector[0],new_vector[1],result['city'],result['type'],int(prediction)))
-
+    #return render_template('index.html', Predict_score ='Your house estimate price of ({}bed-{}bath-{}-{}) is  CA$ {}'.format(new_vector[0],new_vector[1],result['city'],result['type'],int(prediction)))
+    return render_template('index.html', Predict_score ='Your house estimate price is CA$ {}'.format(int(prediction)) )
 
 if __name__ == "__main__":
     app.run(debug=True)
