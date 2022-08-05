@@ -6,9 +6,9 @@ import pickle
 #web: gunicorn app:app
 #first file that we have to run first : flask server name
 app = Flask(__name__)
-pkl_file = open('model.pkl','rb')
+#pkl_file = open('model.pkl','rb')
 model = pickle.load(open('model.pkl', 'rb'))
-index_dict = pickle.load(pkl_file)
+#index_dict = pickle.load(pkl_file)
 
 @app.route('/')
 def home():
